@@ -73,13 +73,13 @@
 		<div class="ten offset-by-three columns">
 			<h1 class="remove-bottom" style="margin-top: 40px">Readmill Injector</h1>
 			<h5>Easily import books to Readmill from your favourite sites.</h5>
-			<hr />
+			<hr>
 		</div>
     <div class="ten columns offset-by-three">
       <p>Readmill Injector plugin available as <a href="https://chrome.google.com/webstore/detail/nkgomhdfkgplmppghoeakmkjmlcicpba">Chrome Extension</a> or as a <a href="https://addons.mozilla.org/en-US/firefox/addon/readmill-injector/">Firefox Add-On</a>. Readmill Injector inserts 'Send to Readmill' buttons on <a href="http://www.gutenberg.org">Project Gutenberg</a> and <a href="http://www.feedbooks.com">Feedbooks</a>.
         This makes it really easy to send books to Readmills Library and thus, easy to send to their iPad application.</p>
     </div>
-    <div class="ten columns offset-by-three center chrome install-container">
+    <div class="ten columns offset-by-three center chrome" id="chrome-install-button">
       <button class="install-button">Add to Chrome</button>
        <small>Or install from <a href="https://chrome.google.com/webstore/detail/nkgomhdfkgplmppghoeakmkjmlcicpba">Chrome Webstore</a></small>
     </div>
@@ -87,7 +87,7 @@
       <img src="images/chrome-gutenberg.png" class="browser">
     </div>
     <div class="firefox ten columns offset-by-three center">
-      <button class="install-button" href="">Install in Firefox</button>
+      <a class="install-button button" href="https://addons.mozilla.org/firefox/downloads/file/155772/readmill_injector-0.2.1-fx.xpi?src=smgt">Install in Firefox</a>
       <small>Or install from <a href="https://addons.mozilla.org/en-US/firefox/addon/readmill-injector/">Mozilla Add-On</a>.</small>
     </div>
     <div class="fourten offset-by-one columns firefox">
@@ -112,9 +112,6 @@
   <script type="text/javascript">
     $(document).ready(function() {
 
-     if (document.getElementById("extension-is-installed")) {
-       $('.chrome.install-container').hide();
-     }
 
      if( $.browser.webkit && chrome) {
           $('.chrome').show();
