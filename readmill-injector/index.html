@@ -1,9 +1,128 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>Readmill Injector</title>
-  </head>
-  <body>
-    Readmill Injector
-  </body>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<head>
+
+	<!-- Basic Page Needs
+  ================================================== -->
+	<meta charset="utf-8">
+	<title>Readmill Injector</title>
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<!-- Mobile Specific Metas
+  ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<!-- CSS
+  ================================================== -->
+	<link rel="stylesheet" href="stylesheets/base.css">
+  <style>
+    h1, h2, h3,h4,h5{
+      font-family: museo;
+    }
+
+    .install-button {
+      font-size: 32px;
+    }
+    .install-button img {
+      vertical-align: baseline;
+    }
+
+    .center {
+      text-align: center;
+    }
+
+    .container .columns.firefox,
+    .container .column.firefox,
+    .container .column.chrome,
+    .container .columns.chrome {
+      display: none;
+    }
+  </style>
+	<link rel="stylesheet" href="stylesheets/skeleton.css">
+	<link rel="stylesheet" href="stylesheets/layout.css">
+
+	<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+	<!-- Favicons
+	================================================== -->
+	<link rel="shortcut icon" href="images/favicon.ico">
+	<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+  <link rel="chrome-webstore-item" href="https://chrome.google.com/webstore/detail/nkgomhdfkgplmppghoeakmkjmlcicpba">
+  <script type="text/javascript" src="http://use.typekit.com/kga4cac.js"></script>
+  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+</head>
+<body>
+
+
+
+	<!-- Primary Page Layout
+	================================================== -->
+
+	<!-- Delete everything in this .container and get started on your own site! -->
+
+	<div class="container">
+		<div class="ten offset-by-three columns">
+			<h1 class="remove-bottom" style="margin-top: 40px">Readmill Injector</h1>
+			<h5>Easily import books to Readmill from your favourite sites.</h5>
+			<hr />
+		</div>
+    <div class="ten columns offset-by-three">
+      <p>Readmill Injector plugin available as <a href="https://chrome.google.com/webstore/detail/nkgomhdfkgplmppghoeakmkjmlcicpba">Chrome Extension</a> or as a <a href="https://addons.mozilla.org/en-US/firefox/addon/readmill-injector/">Firefox Add-On</a>. Readmill Injector inserts 'Send to Readmill' buttons on <a href="http://www.gutenberg.org">Project Gutenberg</a> and <a href="http://www.feedbooks.com">Feedbooks</a>.
+        This makes it really easy to send books to Readmills Library and thus, easy to send to their iPad application.</p>
+    </div>
+    <div class="ten columns offset-by-three center chrome">
+      <a onclick="chrome.webstore.install();return false;" class="install-button" href="#">Add to Chrome</a>
+       <small>Or install from <a href="https://chrome.google.com/webstore/detail/nkgomhdfkgplmppghoeakmkjmlcicpba">Chrome Webstore</a></small>
+    </div>
+    <div class="chrome fourten offset-by-one columns">
+      <img src="images/chrome-gutenberg.png" class="browser">
+    </div>
+    <div class="firefox ten columns offset-by-three center">
+      <button class="install-button" href="">Install in Firefox</button>
+      <small>Or install from <a href="https://addons.mozilla.org/en-US/firefox/addon/readmill-injector/">Mozilla Add-On</a>.</small>
+    </div>
+    <div class="fourten offset-by-one columns firefox">
+      <img src="images/firefox-gutenberg.png">
+    </div>
+    <div class="ten columns offset-by-three">
+
+      <h2>Source Code</h2>
+      <p></p>
+
+    </div>
+
+	</div><!-- container -->
+
+
+
+	<!-- JS
+	================================================== -->
+	<script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+	<script src="javascripts/tabs.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function() {
+     if( $.browser.webkit && chrome) {
+          $('.chrome').show();
+        } else {
+          $('.firefox').show();
+        }
+
+     if( chrome.app.isInstalled ) {
+       $('.chrome .install-button').attr('disabled') = "disabled";
+     }
+     });
+  </script>
+
+<!-- End Document
+================================================== -->
+</body>
 </html>

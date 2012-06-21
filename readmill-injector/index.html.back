@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Readmill Injector</title>
+    <meta name="description" content="Plugin to Chrome and Firefox to inject 'Send to Readmill' buttons on homepages books">
+    <meta name="author" content="Simon Gate">
+    <link rel="style" href="style.css">
+  </head>
+  <body>
+    <div class="content">
+      <h1>Readmill Injector</h1>
+      <p>Readmill Injector is plugin available as Chrome Extension or as a Firefox Add-On. Readmill Injector inserts 'Send to Readmill' buttons on Project Gutenberg and Feedbooks.
+        This makes it really easy to send books to Readmills iPad application.</p>
+
+      <h2>Install Chrome Extension</h2>
+      <p></p>
+
+      <h2>Install Firefox Add-On</h2>
+      <p></p>
+
+      <h3>Source Code</h3>
+      <p>Available on GitHub</p>
+
+    </div>
+
+  </body>
+</html>
