@@ -96,8 +96,9 @@
     <div class="ten columns offset-by-three">
 
       <h2>Source Code</h2>
-      <p></p>
-
+      <p>Both the <a href="https://github.com/simon/chrome-readmill-injector">Chrome extension</a> and the <a href="https://github.com/simon/fx-readmill-inject">Firefox Add-on</a> is available as open-source on <a href="https://github.com">Github</a>.</p>
+      <h3>Author</h3>
+      <p>Both the Chrome extension and the Firefox Add-on were made by <a href="http://smgt.me">Simon Gate</a>, <a href="https://github.com/simon">@simon on Github</a>, <a href="https://twitter.com/simongate">@simongate on Twitter</a>. Feel free to contact me if you know more sites that the plugins should support.</p>
     </div>
 
 	</div><!-- container -->
@@ -116,19 +117,16 @@
           $('.firefox').show();
         }
 
-     if( chrome.app.isInstalled ) {
+     if( chrome && chrome.app.isInstalled ) {
        $('.chrome.install-container').hide();
      }
 
      $(".chrome .install-button").on("click", function() {
        chrome.webstore.install("https://chrome.google.com/webstore/detail/nkgomhdfkgplmppghoeakmkjmlcicpba", function(string) {
-          console.log("yay, success");
-          console.log(string);
+            console.log("Installation complete");
           }, function(error) {
-            console.log("Noooo...");
             console.log(error);
           });
-          console.log("block chrome install");
           return false;
        });
      });
