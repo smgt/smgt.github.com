@@ -79,8 +79,8 @@
       <p>Readmill Injector plugin available as <a href="https://chrome.google.com/webstore/detail/nkgomhdfkgplmppghoeakmkjmlcicpba">Chrome Extension</a> or as a <a href="https://addons.mozilla.org/en-US/firefox/addon/readmill-injector/">Firefox Add-On</a>. Readmill Injector inserts 'Send to Readmill' buttons on <a href="http://www.gutenberg.org">Project Gutenberg</a> and <a href="http://www.feedbooks.com">Feedbooks</a>.
         This makes it really easy to send books to Readmills Library and thus, easy to send to their iPad application.</p>
     </div>
-    <div class="ten columns offset-by-three center chrome">
-      <a onclick="chrome.webstore.install();return false;" class="install-button" href="#">Add to Chrome</a>
+    <div class="ten columns offset-by-three center chrome install-container">
+      <button class="install-button">Add to Chrome</button>
        <small>Or install from <a href="https://chrome.google.com/webstore/detail/nkgomhdfkgplmppghoeakmkjmlcicpba">Chrome Webstore</a></small>
     </div>
     <div class="chrome fourten offset-by-one columns">
@@ -117,8 +117,20 @@
         }
 
      if( chrome.app.isInstalled ) {
-       $('.chrome .install-button').attr('disabled') = "disabled";
+       $('.chrome.install-container').hide();
      }
+
+     $(".chrome .install-button").on("click", function() {
+       chrome.webstore.install("https://chrome.google.com/webstore/detail/nkgomhdfkgplmppghoeakmkjmlcicpba", function(string) {
+          console.log("yay, success");
+          console.log(string);
+          }, function(error) {
+            console.log("Noooo...");
+            console.log(error);
+          });
+          console.log("block chrome install");
+          return false;
+       });
      });
   </script>
 
