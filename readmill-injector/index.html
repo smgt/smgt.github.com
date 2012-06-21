@@ -122,14 +122,11 @@
      }
 
      $(".chrome .install-button").on("click", function() {
-       chrome.webstore.install("https://chrome.google.com/webstore/detail/nkgomhdfkgplmppghoeakmkjmlcicpba", function(string) {
-            console.log("Installation complete");
-          }, function(error) {
-            console.log(error);
-          });
-          return false;
-       });
+       chrome.webstore.install();
+       return false;
      });
+
+   });
   </script>
 
 <!-- End Document
