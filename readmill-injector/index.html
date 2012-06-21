@@ -111,22 +111,26 @@
 	<script src="javascripts/tabs.js"></script>
   <script type="text/javascript">
     $(document).ready(function() {
+
+     if (document.getElementById("extension-is-installed")) {
+       $('.chrome.install-container').hide();
+     }
+
      if( $.browser.webkit && chrome) {
           $('.chrome').show();
         } else {
           $('.firefox').show();
         }
 
-     if( chrome.app.isInstalled ) {
-       $('.chrome.install-container').hide();
-     }
-
      $(".chrome .install-button").on("click", function() {
        chrome.webstore.install();
        return false;
      });
 
+
+
    });
+
   </script>
 
 <!-- End Document
