@@ -9,7 +9,7 @@ task :publish do
   end
 
   ENV['GIT_DIR'] = File.expand_path(`git rev-parse --git-dir`.chomp)
-  old_sha = `git rev-parse refs/remotes/origin/gh-pages`.chomp
+  old_sha = `git rev-parse refs/remotes/origin/master`.chomp
   Dir.chdir('html') do
     ENV['GIT_INDEX_FILE'] = gif = '/tmp/dev.gh.i'
     ENV['GIT_WORK_TREE'] = Dir.pwd
@@ -24,8 +24,8 @@ task :publish do
     end
     puts "Created commit #{csha}"
     puts `git show #{csha} --stat`
-    puts "Updating gh-pages from #{old_sha}"
-    `git update-ref refs/heads/gh-pages #{csha}`
-    `git push origin gh-pages`
+    puts "Updating master from #{old_sha}"
+    `git update-ref refs/heads/master #{csha}`
+    `git push origin master`
   end
 end
