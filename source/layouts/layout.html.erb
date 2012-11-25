@@ -1,14 +1,30 @@
 <!doctype html>
 <html lang="en">
-  <title>Simon Gate</title>
+  <!--
+  .d8888. .88b  d88.  d888b  d888888b
+  88'  YP 88'YbdP`88 88' Y8b `~~88~~'
+  `8bo.   88  88  88 88         88
+    `Y8b. 88  88  88 88  ooo    88
+  db   8D 88  88  88 88. ~8~    88
+  `8888Y' YP  YP  YP  Y888P     YP
+
+  Background image by Jonas Wiklund < http://www.flickr.com/photos/wiklund/ >
+  -->
+  <title><%= data.page.title || "Simon Gate" %></title>
   <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width">
   <meta name="descripton" content="Simon Gate, software developer.">
   <meta name="keywords" content="simon gate, simon, gate, developer, programming, ruby, javascript, php, ios, smgt, html, css, html5, css3, redis, mysql">
-  <link href="/stylesheets/base.css" rel="stylesheet" type="text/css">
-  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+  <script type="text/javascript" src="//use.typekit.net/kga4cac.js"></script>
+  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+  <%= stylesheet_link_tag "normalize", "base" %>
+  <%= javascript_include_tag  "all" %>
   <link rel="payment" href="https://flattr.com/submit/auto?url=https%3A%2F%2Fsmgt.me%2F&amp;user_id=smgt" type="text/html" />
   <body>
-    <%= yield %>
+    <div class="wrapper">
+      <%= yield %>
+    </div>
     <script type="text/javascript">
 
       var _gaq = _gaq || [];
