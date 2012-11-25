@@ -1,4 +1,3 @@
-
 /**
  * Skeleton V1.1
  * Copyright 2011, Dave Gamache
@@ -7,23 +6,4 @@
  * http://www.opensource.org/licenses/mit-license.php
  * 8/17/2011
  */
-
-(function ($) {
-  // hash change handler
-  function hashchange () {
-    var hash = window.location.hash
-      , el = $('ul.tabs [href*="' + hash + '"]')
-      , content = $(hash)
-
-    if (el.length && !el.hasClass('active') && content.length) {
-      el.closest('.tabs').find('.active').removeClass('active');
-      el.addClass('active');
-      content.show().addClass('active').siblings().hide().removeClass('active');
-    }
-  }
-
-  // listen on event and fire right away
-  $(window).on('hashchange.skeleton', hashchange);
-  hashchange();
-  $(hashchange);
-})(jQuery);
+(function(e){function t(){var t=window.location.hash,n=e('ul.tabs [href*="'+t+'"]'),r=e(t);n.length&&!n.hasClass("active")&&r.length&&(n.closest(".tabs").find(".active").removeClass("active"),n.addClass("active"),r.show().addClass("active").siblings().hide().removeClass("active"))}e(window).on("hashchange.skeleton",t),t(),e(t)})(jQuery);
